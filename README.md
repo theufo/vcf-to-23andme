@@ -5,6 +5,10 @@ data_to_db.py is used to convert the VCF file and any additional 23andMe raw dat
 
 The data_to_db.py script accepts both compressed and uncompressed data files.
 
+## Notice
+
+Please use responsibly! If you intend to upload imputed data to online DNA genealogy tools, please also delete it again so as not to pollute these websites with potentially false data. I have thought of deleting these files but they are already mirrored in other places now.
+
 ## Requirements
 * Python3
 
