@@ -8,7 +8,7 @@ import csv, sqlite3
 
 from sys import argv
 
-csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(2**20)
 
 _, data_file_name, data_format, db_file_name = argv
 
