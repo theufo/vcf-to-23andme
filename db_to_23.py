@@ -24,7 +24,7 @@ where
 
 for i, line in enumerate(open(blank_file_name, "r", encoding="utf8")):
 	if i != 0:
-		output_file.write("\r\n")
+		output_file.write("\n")
 	if line == "":
 		break
 		
@@ -47,7 +47,7 @@ for i, line in enumerate(open(blank_file_name, "r", encoding="utf8")):
 	
 	output_file.write("\t" + row[0])
 
-output_file.write("\r\n")
+output_file.write("\n")
 output_file.close()
 
 conn.close()
