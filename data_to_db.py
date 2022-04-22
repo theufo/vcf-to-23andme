@@ -2,10 +2,11 @@
 # Copyright (c) 2015-2016 Sean Hewitt <contact@SeanHewitt.com>
 # Licensed under the MIT license: http://SeanHewitt.com/MIT-LICENSE.txt
 
-import sys, io
-import gzip, zipfile
-import csv, sqlite3
-
+import csv
+import gzip
+import io
+import sqlite3
+import zipfile
 from sys import argv
 
 csv.field_size_limit(2 ** 20)
@@ -35,9 +36,10 @@ on
 
 insert_statement = "insert or replace into genome values (?,?,?,?)"
 
+
 def open_file(file_name):
-	data_file = gzip.open(file_name, "rt", encoding="utf8")
-	try:
+    data_file = gzip.open(file_name, "rt", encoding="utf8")
+    try:
         data_file.read(1);
     except OSError:
         data_file.close()
@@ -59,11 +61,12 @@ def open_file(file_name):
         data_file = io.TextIOWrapper(archive.open(object_name), encoding="utf8")
         archive.close()
         return data_file
-		
-	return open(file_name, "r", encoding="utf8")
+
+    return open(file_name, "r", encoding="utf8")
+
 
 try:
-	data_file = open_file(data_file_name)
+    data_file = open_file(data_file_name)
 except Exception as e:
     print(e)
     exit()
@@ -100,7 +103,7 @@ for i, line in enumerate(reader):
         if not valid:
             continue
 
-        if clear_chr_naming == "1" :
+        if clear_chr_naming == "1":
             line[0] = line[0][3:]
 
         row = line[:3]
